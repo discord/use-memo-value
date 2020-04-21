@@ -1,6 +1,6 @@
 {
   "name": "use-memo-value",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Reuse the previous version of a value unless it has changed",
   "author": "Jamie Kyle <jamie.kyle@discordapp.com>",
   "license": "MIT",
