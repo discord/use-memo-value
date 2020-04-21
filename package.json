@@ -1,0 +1,71 @@
+{
+  "name": "use-memo-value",
+  "version": "0.0.0",
+  "description": "Reuse the previous version of a value unless it has changed",
+  "author": "Jamie Kyle <jamie.kyle@discordapp.com>",
+  "license": "MIT",
+  "repository": "discord/use-memo-value",
+  "keywords": [
+    "react",
+    "hook",
+    "use",
+    "memo",
+    "memoized",
+    "value",
+    "object",
+    "array",
+    "shallow",
+    "equal",
+    "shallowequal",
+    "compare",
+    "comparator",
+    "comparison"
+  ],
+  "source": "src/useMemoValue.ts",
+  "main": "dist/useMemoValue.js",
+  "module": "dist/useMemoValue.module.js",
+  "unpkg": "dist/useMemoValue.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "format": "prettier --write '**'",
+    "test": "TS_NODE_PROJECT=./tsconfig.test.json ava",
+    "build": "rm -rf dist && microbundle --external react,shallowequal --name useMemoValue",
+    "prepublishOnly": "npm run -s build"
+  },
+  "dependencies": {
+    "shallowequal": "^0.1.0 || ^0.2.0 || ^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/shallowequal": "^1.1.1",
+    "ava": "^3.7.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.6",
+    "microbundle": "^0.11.0",
+    "prettier": "^2.0.4",
+    "react": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "ava": {
+    "extensions": [
+      "ts",
+      "tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
