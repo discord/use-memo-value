@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import shallowEqual from "shallowequal"
 
 const FIRST_RUN = {} // an opaque value
@@ -18,8 +18,15 @@ export default function useMemoValue<T>(
 	comparator: Comparator<T> = shallowEqual,
 ): T {
 	let ref = useRef(FIRST_RUN as T)
+	let nextValue = ref.current
+
+	useEffect(() => {
+		ref.current = nextValue
+	})
+
 	if (ref.current === FIRST_RUN || !comparator(value, ref.current)) {
-		ref.current = value
+		nextValue = value
 	}
-	return ref.current
+
+	return nextValue
 }
