@@ -31,7 +31,7 @@
   "scripts": {
     "format": "prettier --write '**'",
     "test": "TS_NODE_PROJECT=./tsconfig.test.json ava",
-    "build": "rm -rf dist && microbundle --external react,shallowequal --name useMemoValue",
+    "build": "rm -rf dist && microbundle --inline none --name useMemoValue",
     "prepublishOnly": "npm run -s build"
   },
   "dependencies": {
