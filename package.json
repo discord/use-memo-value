@@ -46,7 +46,7 @@
     "ava": "^3.7.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.6",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.15.1",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-test-renderer": "^16.13.1",
